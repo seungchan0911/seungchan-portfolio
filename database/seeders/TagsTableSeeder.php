@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\Project;
 use App\Models\Tag;
 
-class ProjectTagSeeder extends Seeder
+class TagsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
