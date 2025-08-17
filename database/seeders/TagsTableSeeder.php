@@ -5,22 +5,28 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\Project;
+use App\Models\Tag;
 
-class TagsTableSeeder extends Seeder
+class ProjectTagSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        $names = ['Laravel', 'PHP', 'JavaScript', 'Vue.js', 'React'];
-
-        $rows = collect($names)->map(fn ($name) => [
-            'name'       => $name,
-            'slug'       => Str::slug($name),   // ← slug 추가
-            'created_at' => now(),
-            'updated_at' => now(),
-        ])->all();
-
-        // 중복 실행해도 slug 기준으로 갱신되게 하고 싶으면 upsert 사용
-        DB::table('tags')->upsert($rows, ['slug'], ['name','updated_at']);
-        // 단순 삽입만 원하면 위 upsert 대신: DB::table('tags')->insert($rows);
+        $map = [
+            'povoko studio' => 'client_works',
+            'cactus curry club' => 'client_works',
+            'columnfort' => 'personal_works',
+            'enforce sword game' => 'concept_projects',
+        ];
+        foreach ($map as $projectTitle => $tagSlug) {
+            $project = Project::where('title', $projectTitle)->first();
+            $tag = Tag::where('slug', $tagSlug)->first();
+            if ($project && $tag) {
+                $project->tags()->syncWithoutDetaching([$tag->id]);
+            }
+        }
     }
 }
