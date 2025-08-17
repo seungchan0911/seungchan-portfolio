@@ -1,0 +1,108 @@
+main {
+    gap: 128px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    & .section-title {
+        font-size: 32px;
+        text-transform: capitalize;
+    }
+
+    &.introduce {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        & .text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            & .title {
+                font-size: 64px;
+            }
+
+            & .subtitle {
+                color: var(--stone-gray);
+            }
+        }
+    }
+
+    & .projects {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        & > a {
+            display: block;
+            flex: 1;
+        }
+
+        & .project {
+            position: relative;
+
+            aspect-ratio: 16 / 9;
+            border: 1px solid var(--silk-gray);
+            border-radius: 2px;
+            transition: .25s;
+            cursor: pointer;
+            overflow: hidden;
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+                vertical-align: middle;
+            }
+
+            & .created-at {
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                width: fit-content;
+
+                padding: 4px 8px;
+
+                border: 1px solid var(--black);
+                border-top: none;
+                border-right: none;
+                border-end-start-radius: 2px;
+                font-size: 12px;
+                transition: .25s;
+                background: var(--white);
+                opacity: 0;
+            }
+
+            & .description {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                width: fit-content;
+
+                padding: 4px 8px;
+
+                border: 1px solid var(--black);
+                border-bottom: none;
+                border-left: none;
+                border-start-end-radius: 2px;
+                font-size: 12px;
+                transition: .25s;
+                background: var(--white);
+                opacity: 0;
+            }
+            
+            &:hover {
+                border-color: var(--black);
+            }
+
+            &:hover .created-at, &:hover .description {
+                opacity: 1;
+            }
+        }
+    }
+}
