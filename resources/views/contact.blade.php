@@ -36,21 +36,4 @@
             </form>
         </div>
     </section>
-    <section class="capabilities">
-        <div class="section-title">capabilities</div>
-        <div class="table">
-            <div class="table-group">
-                <div class="h">design</div>
-                <div class="h">code</div>
-                <div class="r">You get a clean interface, built to function without distraction.</div>
-                <div class="r">You can expect solid structure, written to work without surprises.</div>
-            </div>
-            <div class="table-group">
-                <div class="h">speed</div>
-                <div class="h">accuracy</div>
-                <div class="r">You send a message, I respond and deliver without delay.</div>
-                <div class="r">You receive results as intended, with no detail left behind.</div>
-            </div>
-        </div>
-    </section>
 @endsection
