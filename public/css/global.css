@@ -53,6 +53,10 @@
         & .menu-control {
             display: flex !important;
         }
+
+        & .admin {
+            display: none !important;
+        }
     }
 
     main {
@@ -71,7 +75,7 @@
                 font-size: 24px !important;
             }
 
-            &.contact {
+            &.contact, &.admin {
                 flex-direction: column;
                 gap: 64px !important;
 
@@ -210,7 +214,7 @@ header {
             align-items: center;
             gap: 24px;
             
-            & div {
+            & div, & a {
                 display: flex;
                 align-items: center;
                 
