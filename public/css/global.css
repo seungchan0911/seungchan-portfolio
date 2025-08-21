@@ -42,6 +42,7 @@ html.dark {
 
     & path {
         stroke: var(--black);
+        transition: .25s;
     }
 
     & .change-theme {

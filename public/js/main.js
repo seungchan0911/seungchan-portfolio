@@ -48,11 +48,20 @@ function menuControl() {
 
 function changeTheme() {
     const changeButton = document.querySelector(".change-theme")
+    const allDOM = document.querySelectorAll("*")
     
     changeButton.addEventListener("click", () => {
         const currentTheme = localStorage.getItem("theme")
         const newTheme = currentTheme === "dark" ? "white" : "dark"
         localStorage.setItem("theme", newTheme)
+
+        allDOM.forEach(DOM => {
+            DOM.style.transition = ".25s"
+            
+            setTimeout(() => {
+                DOM.style.transition = ""
+            }, 250);
+        })
 
         judgeTheme()
     })
