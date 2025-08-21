@@ -2,6 +2,8 @@ window.addEventListener("DOMContentLoaded", () => {
     scrollHeaderEvent()
     dropMenuControl()
     menuControl()
+    changeTheme()
+    judgeTheme()
 })
 
 function scrollHeaderEvent() {
@@ -42,4 +44,32 @@ function menuControl() {
         if (menuBtn.classList.contains("changed")) mobileNav.classList.add("show-menu")
         else mobileNav.classList.remove("show-menu")
     })
+}
+
+function changeTheme() {
+    const changeButton = document.querySelector(".change-theme")
+    
+    changeButton.addEventListener("click", () => {
+        const currentTheme = localStorage.getItem("theme")
+        const newTheme = currentTheme === "dark" ? "white" : "dark"
+        localStorage.setItem("theme", newTheme)
+
+        judgeTheme()
+    })
+}
+
+function judgeTheme() {
+    const afterTheme = localStorage.getItem("theme")
+    
+    afterTheme === "dark" ? applyTheme("dark") : applyTheme("white")
+}
+
+function applyTheme(theme) {
+    const html = document.querySelector("html")
+
+    if (theme === "dark")
+        html.classList.add("dark")
+    else if (theme === "white")
+        html.classList.remove("dark")
+   
 }
