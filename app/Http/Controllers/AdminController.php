@@ -28,4 +28,20 @@ class AdminController extends Controller
             return back();
         }
     }
+
+    public function delete($id) {
+        Contact::find($id)->delete();
+
+        return back();
+    }
+
+    public function read($id) {
+        $contact = Contact::find($id);
+
+        return view('admin.read', compact('contact'));
+    }
+
+    public function back() {
+        return redirect('admin');
+    }
 }
