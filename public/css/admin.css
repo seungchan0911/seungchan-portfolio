@@ -38,6 +38,15 @@ main {
                 & button {
                     all: unset;
                     cursor: pointer;
+                    
+                    & svg path {
+                        stroke: var(--stone-gray);
+                        transition: .25s;
+                    }
+
+                    &:hover svg path {
+                        stroke: var(--black);
+                    }
                 }
             }
         }
