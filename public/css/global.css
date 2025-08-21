@@ -26,6 +26,9 @@
 }
 
 html.dark {
+    height: 100vh;
+    background: black;
+    
     color: #fff !important;
 
     --white: #000000 !important;
