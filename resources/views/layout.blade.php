@@ -27,4 +27,7 @@
     </div>
 </body>
 <script src="{{ asset('js/main.js') }}"></script>
+@if (session('success'))
+<script>alert(@json(session('success')))</script>
+@endif
 </html>
