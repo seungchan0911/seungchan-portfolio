@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/works.css') }}">
     @elseif (Route::currentRouteName() === 'contact')
         <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    @elseif (Route::currentRouteName() === 'admin' || Route::currentRouteName() === 'login')
+    @elseif (Route::currentRouteName() === 'admin' || Route::currentRouteName() === 'login' || Route::currentRouteName() === 'read')
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @endif
 </head>
