@@ -99,6 +99,21 @@
             grid-template-columns: 1fr !important;
             gap: 12px !important;
         }
+
+        & > .content {
+            grid-template-columns: 1fr !important;
+        }
+
+        & .contact-read {
+            & .bottom {
+                flex-direction: column;
+                gap: 4px;
+
+                & .bar {
+                    display: none;
+                }
+            }
+        }
     }
 
     footer {
