@@ -12,6 +12,10 @@ Route::middleware(\App\Http\Middleware\AdminAuth::class)->group(function () {
     Route::get('/admin', [AdminController::class, 'showAdmin'])->name('admin');
 });
 Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('login');
+Route::get('/admin/read/{id}', [AdminController::class, 'read'])->name('read');
+Route::get('admin/back', [AdminController::class, 'back'])->name('admin.back');
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('login');
+
+Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('delete');
