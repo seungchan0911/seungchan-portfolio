@@ -73,6 +73,12 @@ section {
                         border-color: var(--black);
                         background: var(--white);
                     }
+
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
                 }
 
                 & textarea {

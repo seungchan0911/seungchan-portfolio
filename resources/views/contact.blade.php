@@ -24,7 +24,7 @@
                 </div>
                 <div class="input-group">
                     <div class="input-title">phone number</div>
-                    <input type="text" name="phone_number" required>
+                    <input type="number" name="phone_number" required>
                 </div>
                 <div class="input-group">
                     <div class="input-title">content</div>
