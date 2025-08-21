@@ -25,6 +25,31 @@
     --layout-padding: 128px;
 }
 
+html.dark {
+    color: #fff !important;
+
+    --white: #000000 !important;
+    --pure-gray: #141414 !important;
+    --cloud-gray: #e6e6e6 !important;
+    --silk-gray: #666666 !important;
+    --stone-gray: #999999 !important;
+    --iron-gray: #666666 !important;
+    --charcoal-gray: #333333 !important;
+    --black: #ffffff !important;
+
+    & path {
+        stroke: var(--black);
+    }
+
+    & .change-theme {
+        & path {
+            &:nth-child(1) {
+                fill: var(--black);
+            }
+        }
+    }
+}
+
 @media (min-width: 1800px) {
     :root {
         --layout-padding: 384px !important;
@@ -350,4 +375,5 @@ footer {
     font-size: 12px;
     color: var(--stone-gray);
     transition: .25s padding;
+    background: var(--white);
 }
