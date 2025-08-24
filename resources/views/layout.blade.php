@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="description" content="Seungchan's portfolio site. Showcasing design, development and creative projects.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>seungchan</title>
+    <title>Seungchan Portfolio - Web Developer & Designer</title>
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.png') }}" type="image/x-icon">
     @if (Route::currentRouteName() === 'home')
