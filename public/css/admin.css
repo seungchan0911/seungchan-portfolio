@@ -16,6 +16,10 @@ main {
                 padding: 12px 16px;
                 border-bottom: 1px solid var(--silk-gray);
 
+                & .name {
+                    height: 24px;
+                }
+
                 & .email {
                     font-size: 14px;
                     color: var(--stone-gray);
@@ -29,10 +33,6 @@ main {
                 align-items: end;
 
                 padding: 12px 16px;
-
-                & .name {
-                    height: 24px;
-                }
 
                 & .date {
                     font-size: 12px;
