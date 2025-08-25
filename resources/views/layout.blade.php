@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta property="og:title" content="Seungchan Portfolio">
+    <meta property="og:description" content="High school web developer blending creativity and logic to craft modern websites and digital experiences.">
+    <meta property="og:image" content="https://seungchan-portfolio.com/img/favicon/favicon.png">
+    <meta property="og:url" content="https://seungchan-portfolio.com">
+    <meta property="og:type" content="website">
     <meta name="description" content="Seungchan's portfolio site. Showcasing design, development and creative projects.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Seungchan Portfolio - Web Developer & Designer</title>
