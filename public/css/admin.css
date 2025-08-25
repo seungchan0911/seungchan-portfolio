@@ -17,6 +17,9 @@ main {
                 border-bottom: 1px solid var(--silk-gray);
 
                 & .name {
+                    display: flex;
+                    align-items: center;
+                    
                     height: 24px;
                 }
 
