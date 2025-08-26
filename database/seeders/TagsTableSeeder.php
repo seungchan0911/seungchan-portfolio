@@ -16,10 +16,10 @@ class TagsTableSeeder extends Seeder
     public function run(): void
     {
         $map = [
-            // 'povoko studio' => 'client_works',
-            // 'cactus curry club' => 'client_works',
-            // 'columnfort' => 'personal_works',
-            // 'enforce sword game' => 'concept_projects',
+            'povoko studio' => 'client_works',
+            'cactus curry club' => 'client_works',
+            'columnfort' => 'personal_works',
+            'enforce sword game' => 'concept_projects',
             'frame24' => 'personal_works',
         ];
         foreach ($map as $projectTitle => $tagSlug) {

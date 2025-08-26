@@ -27,5 +27,7 @@ class ProjectSeeder extends Seeder
             ['title'=>'I\'ll fill it up soon','image_path'=>'img/source/sample-image.png','link_url'=>'','published_at'=>null],
             ['title'=>'frame24','image_path'=>'img/source/frame24.png','link_url'=>'http://frame24.laravel.cloud','published_at'=>'2025-07-05'],
         ]);
+
+        $this->call(TagsTableSeeder::class);
     }
 }
