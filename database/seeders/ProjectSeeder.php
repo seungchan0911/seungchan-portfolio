@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
+use Illuminate\Support\Facades\DB;
 
 class ProjectSeeder extends Seeder
 {
@@ -13,6 +14,11 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('project_tags')->truncate();
+        Project::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         Project::insert([
             ['title'=>'povoko studio','image_path'=>'img/source/povoko-studio.png','link_url'=>'http://www.povokostudio.com','published_at'=>'2025-09-11'],
             ['title'=>'cactus curry club','image_path'=>'img/source/cactus-curry-club.png','link_url'=>'http://cactus-curry-club.vercel.app','published_at'=>'2025-05-10.'],
