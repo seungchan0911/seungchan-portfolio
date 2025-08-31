@@ -7,7 +7,7 @@
     color: inherit;
     font-family: Helvetica;
     -webkit-tap-highlight-color: transparent;
-    user-select: none;
+    /* user-select: none; */
     font-weight: 300;
 }
 

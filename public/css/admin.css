@@ -66,6 +66,12 @@ main {
 
         margin-top: -32px;
 
+        & .back {
+            display: flex;
+
+            width: fit-content;
+        }
+
         & .contacted {
             display: flex;
             flex-direction: column;
