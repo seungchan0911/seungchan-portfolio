@@ -66,6 +66,10 @@ html.dark {
 
     main {
         padding: 64px var(--layout-padding) !important;
+
+        & > .content {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
     }
 }
 
