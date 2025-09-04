@@ -25,12 +25,6 @@ function dropMenuControl() {
         dropMenu.parentNode.addEventListener("click", () => {
             dropMenu.classList.toggle("show")
         })
-
-        dropMenu.querySelectorAll(".menu").forEach(menu => {
-            menu.addEventListener("click", (e) => {
-                console.log(e.target.textContent)
-            })
-        })
     })
 }
 
@@ -80,5 +74,4 @@ function applyTheme(theme) {
         html.classList.add("dark")
     else if (theme === "white")
         html.classList.remove("dark")
-   
 }

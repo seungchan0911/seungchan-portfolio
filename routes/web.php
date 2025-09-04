@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
@@ -19,3 +21,12 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('login');
 
 Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('delete');
+
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'kr'])) {
+        Session::put('locale', $locale);
+        App::setLocale($locale);
+    }
+    return back();
+})->name('lang.switch');

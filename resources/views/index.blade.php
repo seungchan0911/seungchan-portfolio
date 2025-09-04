@@ -12,7 +12,7 @@
         </div>
     </section>
     <section class="works">
-        <div class="section-title">featured projects</div>
+        <div class="section-title">recent projects</div>
         <div class="projects">
             @foreach ($projects->take(4) as $project)
                 <a href="{{ $project->link_url }}">
