@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AdminSeeder extends Seeder
 {
@@ -13,9 +14,15 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::insert([
-            'code' => 'scpf',
-        ]);
+        // 이미 존재하는지 확인
+        $exists = DB::table('admins')->where('code', 'scpf')->exists();
+        
+        if (!$exists) {
+            DB::table('admins')->insert([
+                'code' => 'scpf',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }
-    
