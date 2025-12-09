@@ -9,28 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class RefreshAdminsTable extends Command
 {
-    /**
-     * 커맨드 시그니처 (짧고 간단하게)
-     * php artisan refresh:admins 로 실행됨
-     */
     protected $signature = 'refresh:admins';
-
-    /**
-     * 커맨드 설명
-     */
     protected $description = 'Refresh admins table structure';
 
-    /**
-     * 실행 로직
-     */
     public function handle()
     {
-        // 확인 메시지 (선택사항)
-        if (!$this->confirm('이 작업은 admins 테이블을 삭제합니다. 계속하시겠습니까?')) {
-            $this->info('작업이 취소되었습니다.');
-            return 0;
-        }
-
         // 1단계: 테이블 삭제
         $this->info('🗑️  Admins 테이블 삭제 중...');
         Schema::dropIfExists('admins');
@@ -51,10 +34,9 @@ class RefreshAdminsTable extends Command
         ]);
         $this->info('✓ Admins 테이블이 재생성되었습니다!');
 
-        // 성공 메시지
         $this->newLine();
         $this->info('🎉 모든 작업이 완료되었습니다!');
         
-        return 0; // 성공
+        return 0;
     }
 }
